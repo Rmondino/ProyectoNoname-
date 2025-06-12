@@ -1,0 +1,57 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>No Name - Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+    <h1>No Name</h1>
+    <nav>
+        <ul class="nav-links">
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('carrito') }}">Carrito 🛒</a></li>
+            {% else %}
+            <li><a href="#" onclick="mostrarAlerta()">Carrito 🛒</a></li>
+            {% endif %}
+    
+            <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Registrarse</a></li>
+        </ul>
+    </nav>
+
+<script>
+  function mostrarAlerta() {
+    alert("Debés iniciar sesión o registrarte para acceder al carrito.");
+    window.location.href = "{{ url_for('login') }}";
+  }
+</script>
+
+    
+
+    </header>
+
+    <main>
+        <section class="galeria">
+            <img src="{{ url_for('static', filename='img/Mockup de buzo.png') }}" alt="Buzo 1">
+            <img src="{{ url_for('static', filename='img/Imagen creativa de b.png') }}" alt="Remera 1">
+            <img src="{{ url_for('static', filename='img/Mockup de remera bla.png') }}" alt="Buzo 2">
+            <img src="{{ url_for('static', filename='img/Imagen creativa de r.png') }}" alt="Remera 2">
+            
+        </section>
+        <aside>
+            <h2>Hola,{{ current_user.username }}</h2>
+            <p>Descubre nuestra colección exclusiva de remeras y buzos. Calidad, estilo y comodidad en cada prenda.</p>
+            <ul>
+                <li>Nuevos ingresos</li>
+                <li>Ofertas especiales</li>
+                <li>Envíos a todo el país</li>
+            </ul>
+        </aside>
+    </main>
+</body>
+</html>

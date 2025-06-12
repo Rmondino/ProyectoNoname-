@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>No Name</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div class="login-container">
+    <h2>Crear Cuenta</h2>
+    <form method="post" action="{{ url_for('register') }}">
+        Usuario: <input type="text" name="username" required><br>
+        Contraseña: <input type="password" name="password" required><br>
+        <input type="submit" value="Registrarse">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Carrito - No Name</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>No Name</h1>
+        <nav>
+            <ul class="nav-links">
+            
+            <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+        
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Carrito de Compras</h2>
+        <p>Hola, {{ current_user.username }}</p>
+
+        <p>Tu carrito está vacío.</p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,235 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  display: flex;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+
+
+header {
+  background-color: #1f1f1f;
+  padding: 1.5rem ;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  position:fixed;
+  z-index: 1000;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+  color: #bbb;
+  font-style: italic;
+}
+
+main {
+  margin-top: 150px; /* ajustá según el alto real del header */
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  
+}
+
+
+.galeria {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1.5rem;
+}
+
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.3);
+}
+
+aside {
+  flex: 1;
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+  color: #ccc;
+  min-width: 280px;
+}
+
+aside h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #fff;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+aside p {
+  line-height: 1.5;
+  margin: 1rem 0;
+  color: #bbb;
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+aside ul li {
+  background: linear-gradient(90deg, #444, #222);
+  margin-bottom: 0.8rem;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #eee;
+  box-shadow: inset 0 0 8px #000;
+  transition: background-color 0.3s ease;
+}
+
+aside ul li:hover {
+  background: linear-gradient(90deg, #666, #444);
+  cursor: pointer;
+}
+
+/* nav var */
+nav {
+  background-color: #1a1a1a;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* login container */
+.login-container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  margin: 50px auto; /* Para centrar verticalmente con margen */
+  margin-top: 300px;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.login-container input[type="submit"] {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-container input[type="submit"]:hover {
+  background-color: #333;
+}
+
+.login-container a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.flash-messages {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+  z-index: 1000;
+}
+
+.flash.error {
+  color: white;
+  background-color: #e74c3c;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
